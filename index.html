@@ -7,73 +7,64 @@
     <title>Ashesi CV Template</title>
 </head>
 <body>
-    <script src="cv.js"></script>
+    <div class="container">
+        <div class="header">
+            <h2>Ashesi CV Template</h2>
+        </div>
+    </div> 
 
-<div class="container">
-    <div class="header">
-        <h2>Ashesi CV Template</h2>
-    </div>
-</div>
-
-
-</div>
-<div class="form-control">
-    <form>
-    <label>First name</label>
-    <input type=" name" placeholder="Enter your first name"
-    id= "name"><br>
+    <form id="form">
+        <div class="form-control">
+            <label>First name</label>
+            <input type=" name" placeholder="Enter your first name" id= "name">
+        </div> 
 
 
-
-</div>
-<div class="form-control">
-    <label>Middle name</label>
-    <input type="middle" placeholder="Enter your middle name"
-    id="middle"><br>
-</div>
-
-<div class="form-control">
-    <label>Last name</label>
-    <input type="last" placeholder="Enter your last name"
-    id="last">
-</div>
+        <div class="form-control">
+            <label>Middle name</label>
+            <input type="middle" placeholder="Enter your middle name" id="middle">
+        </div>
 
 
-    
-   
-    
-<p>
-    <label>Gender</label>
-    <select id = "myList">
-      <option value = "Male">Male</option>
-      <option value = "Female">Female</option>
-      
-    </select>
- </p>
+        <div class="form-control">
+            <label>Last name</label>
+            <input type="last" placeholder="Enter your last name" id="last">
+        </div>
 
 
-<div class="form-control">
-    <label>Phone number</label>
-    <input type="number" placeholder="Enter your phone number"
-    id="number">
-</div>
+        <div class="form-control" >
+            <label>Gender</label>
+            <select id = "myList">
+                <option value = "Male">Male</option>
+                <option value = "Female">Female</option>
+            </select>
+        </div>
 
-<div class="form-control">
-    <label>Email</label>
-    <input type="email" placeholder="e.g sombody@ashesi.edu.gh"
-    id="email">
-</div>
 
-<div class="form-control">
-    <label>Address</label>
-    <input type="address" placeholder="e.g P.O box 50"
-    id="address">
-</div>
+        <div class="form-control">
+            <label>Phone number</label>
+            <input type="text" placeholder="Enter your phone number" id="number">
+        </div>
+        
 
-<button>Submit</button>
+        <div class="form-control">
+            <label>Email</label>
+            <input type="email" placeholder="e.g sombody@ashesi.edu.gh" id="email">
+        </div>
+        
 
-</form>
+        <div class="form-control">
+            <label>Address</label>
+            <input type="address" placeholder="e.g P.O box 50" id="address">
+        </div>
+
+        <div id="submit_button">
+            <button type="submit">Submit</button>
+        </div>
+        
+    </form>
 </body>
+<script src="cv.js"></script>
 </html>
 
 

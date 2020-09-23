@@ -1,96 +1,54 @@
 const form = document.getElementById('form');
-const form = document.getElementById('name');
-const form = document.getElementById('middle');
-const form = document.getElementById('last');
-const form = document.getElementById('gender');
-const form = document.getElementById('number');
-const form = document.getElementById('email');
-const form = document.getElementById('address');
+const select = document.querySelector('#myList');
+const name = document.getElementById('name');
+const middle = document.getElementById('middle');
+const last = document.getElementById('last');
+const gender = select.options[select.selectedIndex];
+const number = document.getElementById('number');
+const email = document.getElementById('email');
+const address = document.getElementById('address');
 
-form.addEventListener('submit',(e)=> {
-      e.preventDefault();
+let regName = /^[a-zA-Z].*[\s\.]*$/;
+let regNumber = /1?-?\.?\(?\d{3}[\-\)\.\s]?\d{3}[\-\.\s]?\d{4}/;
+let regEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-      checkInputs();
+function validate(e){
+    e.preventDefault();
 
-});
+    localStorage.setItem('name', name.value);
+    localStorage.setItem('middle', middle.value);
+    localStorage.setItem('last', last.value);
+    localStorage.setItem('gender', gender.value);
+    localStorage.setItem('number', number.value);
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('address', address.value);
 
-function checkInputs() {
-//get the values from the inputs
-const nameValue = name.value.trim();
-const middleValue = middle.value.trim();
-const lastValue = last.value.trim();
-const genderValue = gender.value.trim();
-const numberValue = number.value.trim();
-const emailValue = email.value.trim();
-const addressValue = address.value.trim();
+    if(!regName.test(name.value)){
+        alert("Enter first name");
+        return false;
+    }
 
-if(nameValue =='') {
-//show error
-//add error class
-setErrorFor(name, 'Name cannot be blank');
+    if(!regName.test(last.value)){
+        alert("Enter Last name");
+        return false;
+    }
 
-}else {
-    //add sucess class
-    setSuccessFor(name);
-}
-if(middleValue =='') {
-    //show error
-    setErrorFor(name, 'Middle name cannot be blank');
-    //add error class
+    if(!regNumber.test(number.value)){
+        alert("Invalid phone number");
+        return false;
+    }
+
+    if(!regEmail.test(email.value)){
+        alert("Invalid email");
+        return false;
+    }
+
+    else{
+        location.href="cv.html";
+    }
     
-    }else {
-        //add sucess class
-        setSuccessFor(name);
-
-        if(lastValue =='') {
-            //show error
-            setErrorFor(last, 'Last name cannot be blank');
-            //add error class
-            
-            }else {
-                //add sucess class
-                setSuccessFor(last);
-               
-                        if(numberValue =='') {
-                            //show error
-                            setErrorFor(number, 'Phone number cannot be blank');
-                            //add error class
-                            
-                            }else {
-                                //add sucess class
-                                setSuccessFor(number);
-
-                                if(emailValue =='') {
-                                    //show error
-                                    setErrorFor(email, 'Email cannot be blank');
-                                    //add error class
-                                    
-                                    }else {
-                                        //add sucess class
-                                        setSuccessFor(email);
-
-                                        if(addressValue =='') {
-                                            //show error
-                                            setErrorFor(address, 'address cannot be blank');
-                                            //add error class
-                                            
-                                            }else {
-                                                //add sucess class
-                                                setSuccessFor(address);
-
-
-
 }
 
-
-
-
-
-
-
-
-
-
-
+form.addEventListener('submit', validate)
 
 
